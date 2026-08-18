@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/angorita/trevor/cmd/pkg"
+	"github.com/angorita/trevor/pkg/handlers"
 	"net/http"
 )
 
 const portNumber = ":8080"
 
 func main() {
-	http.HandleFunc("/", Home)
-	http.HandleFunc("/about", About)
+	http.HandleFunc("/", handlers.Home)
+	http.HandleFunc("/about", handlers.About)
 
 	fmt.Printf("Starting application on port %s\n", portNumber)
 	fmt.Printf("Visualizá la app en: http://localhost%s/about\n", portNumber)
